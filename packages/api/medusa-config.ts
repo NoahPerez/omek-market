@@ -5,6 +5,10 @@ import path from 'path'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
+const workerMode = (process.env.MEDUSA_WORKER_MODE as "shared" | "worker" | "server" | undefined) || "shared"
+const disableAdmin = process.env.DISABLE_MEDUSA_ADMIN === "true"
+const isWorker = workerMode === "worker"
+
 // Resolves where a dashboard app lives:
 // - in the source tree (development): ../../apps/<name>
 // - in the production build artifact: hosts that deploy only `.medusa/server` (for example
@@ -20,6 +24,7 @@ module.exports = withMercur({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
     redisUrl: process.env.REDIS_URL,
+    workerMode,
     http: {
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,
@@ -29,6 +34,9 @@ module.exports = withMercur({
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
     }
   },
+  admin: {
+    disable: disableAdmin,
+  },
   featureFlags: {
     seller_registration: true
   },
@@ -36,6 +44,7 @@ module.exports = withMercur({
     {
       resolve: '@mercurjs/core/modules/admin-ui',
       options: {
+        disable: isWorker,
         appDir: dashboardAppDir('admin'),
         path: '/dashboard',
       }
@@ -43,6 +52,7 @@ module.exports = withMercur({
     {
       resolve: '@mercurjs/core/modules/vendor-ui',
       options: {
+        disable: isWorker,
         appDir: dashboardAppDir('vendor'),
         path: '/seller',
       }
