@@ -22,7 +22,12 @@ const dashboardAppDir = (name: string) => {
 
 module.exports = withMercur({
   projectConfig: {
-    databaseUrl: process.env.DATABASE_URL,
+   databaseUrl: process.env.DATABASE_URL,
+    databaseDriverOptions: {
+      connection: {
+        ssl: false,
+      },
+    },
     redisUrl: process.env.REDIS_URL,
     workerMode,
     http: {
