@@ -50,6 +50,7 @@ ENV STOREFRONT_REVALIDATE_SECRET=$STOREFRONT_REVALIDATE_SECRET
 ENV MERCUR_VENDOR_URL=$MERCUR_VENDOR_URL
 
 RUN bunx turbo run build --filter=@acme/api...
+RUN node -e "const fs=require('fs');const p='packages/api/.medusa/server/package.json';const pkg=JSON.parse(fs.readFileSync(p,'utf8'));delete pkg.devDependencies;fs.writeFileSync(p,JSON.stringify(pkg,null,2));"
 RUN cd packages/api/.medusa/server && bun install --production
 
 FROM oven/bun:1.3.11 AS runtime
