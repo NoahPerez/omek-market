@@ -6,6 +6,7 @@
       "name": "omek-market",
       "dependencies": {
         "@hookform/resolvers": "5.4.0",
+        "@medusajs/event-bus-redis": "^2.19.0",
         "@medusajs/icons": "2.18.0",
         "@medusajs/ui": "4.1.19",
         "@mercurjs/client": "2.3.0",
@@ -140,6 +141,7 @@
         "@medusajs/core-flows": "2.18.0",
         "@medusajs/dashboard": "2.18.0",
         "@medusajs/draft-order": "2.18.0",
+        "@medusajs/event-bus-redis": "^2.19.0",
         "@medusajs/framework": "2.18.0",
         "@medusajs/medusa": "2.18.0",
         "@mercurjs/cli": "2.3.0",
@@ -913,7 +915,7 @@
 
     "@medusajs/event-bus-local": ["@medusajs/event-bus-local@2.18.0", "", { "peerDependencies": { "@medusajs/framework": "2.18.0" } }, "sha512-YvzJHDvG3TU/6CvlzKmaireTudw+ptgN9b4Qud9rdKzY4sMkVOA3/1DL0ZdBUQ5p7rrp5HNZBIQjtB7vM1oE9A=="],
 
-    "@medusajs/event-bus-redis": ["@medusajs/event-bus-redis@2.18.0", "", { "dependencies": { "bullmq": "5.13.0", "ioredis": "^5.4.1" }, "peerDependencies": { "@medusajs/framework": "2.18.0" } }, "sha512-4pBvgEaTnvgnbJ/FgG2JMrFcsNGDucOBV+y4KLGo1RcLukgtkxb2g7mE3sc1CWnl2FNgPlX6hCUAPbN1sRPlAg=="],
+    "@medusajs/event-bus-redis": ["@medusajs/event-bus-redis@2.19.0", "", { "dependencies": { "bullmq": "5.13.0", "ioredis": "^5.4.1" }, "peerDependencies": { "@medusajs/framework": "2.19.0" } }, "sha512-BM0dHxkuVqRYLbrcaHL+R0JjKloIwhPFMgbOjkGPaBFFcgmXwX/1vPJX5b7t0qjnE7sHJMqfIiM0ptEo/BKxKQ=="],
 
     "@medusajs/file": ["@medusajs/file@2.18.0", "", { "peerDependencies": { "@medusajs/framework": "2.18.0" } }, "sha512-gu2QCYo4g838vDVhcnAwLwXDnJ0+Ijdv83jUtWu0tLOOIXza83VkO4FZ1kJRoGtNf+OXAO9rCiBHkTywDBBYZw=="],
 
@@ -4282,6 +4284,8 @@
     "@medusajs/framework/glob": ["glob@13.0.6", "", { "dependencies": { "minimatch": "^10.2.2", "minipass": "^7.1.3", "path-scurry": "^2.0.2" } }, "sha512-Wjlyrolmm8uDpm/ogGyXZXb1Z+Ca2B8NbJwqBVg0axK9GbBeoS7yGV6vjXnYdGm6X53iehEuxxbyiKp8QmN4Vw=="],
 
     "@medusajs/framework/zod-validation-error": ["zod-validation-error@5.0.0", "", { "peerDependencies": { "zod": "^3.25.0 || ^4.0.0" } }, "sha512-hmk+pkyKq7Q71PiWVSDUc3VfpzpvcRHZ3QPw9yEMVvmtCekaMeOHnbr3WbxfrgEnQTv6haGP4cmv0Ojmihzsxw=="],
+
+    "@medusajs/medusa/@medusajs/event-bus-redis": ["@medusajs/event-bus-redis@2.18.0", "", { "dependencies": { "bullmq": "5.13.0", "ioredis": "^5.4.1" }, "peerDependencies": { "@medusajs/framework": "2.18.0" } }, "sha512-4pBvgEaTnvgnbJ/FgG2JMrFcsNGDucOBV+y4KLGo1RcLukgtkxb2g7mE3sc1CWnl2FNgPlX6hCUAPbN1sRPlAg=="],
 
     "@medusajs/payment-stripe/stripe": ["stripe@15.12.0", "", { "dependencies": { "@types/node": ">=8.1.0", "qs": "^6.11.0" } }, "sha512-slTbYS1WhRJXVB8YXU8fgHizkUrM9KJyrw4Dd8pLEwzKHYyQTIE46EePC2MVbSDZdE24o1GdNtzmJV4PrPpmJA=="],
 

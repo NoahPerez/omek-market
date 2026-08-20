@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@hookform/resolvers": "5.4.0",
+    "@medusajs/event-bus-redis": "^2.19.0",
     "@medusajs/icons": "2.18.0",
     "@medusajs/ui": "4.1.19",
     "@mercurjs/client": "2.3.0",
