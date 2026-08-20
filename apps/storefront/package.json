@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.1",
@@ -17,6 +20,7 @@
     "@medusajs/ui": "^4.0.33",
     "@mercurjs/client": "2.2.0",
     "@mercurjs/types": "2.2.0",
+    "@opennextjs/cloudflare": "^1.20.2",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.1.0",
     "@talkjs/react": "^0.1.11",
@@ -65,7 +69,8 @@
     "storybook": "^8.4.7",
     "storybook-next-intl": "^1.2.4",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.124.0"
   },
   "eslintConfig": {
     "extends": [
