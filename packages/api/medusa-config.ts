@@ -37,10 +37,12 @@ module.exports = withMercur({
   projectConfig: {
    databaseUrl: process.env.DATABASE_URL,
     databaseDriverOptions: {
-      connection: {
-        ssl: false,
-      },
+  connection: {
+    ssl: {
+      rejectUnauthorized: false,
     },
+  },
+},
     redisUrl: REDIS_URL,
     workerMode,
     http: {
