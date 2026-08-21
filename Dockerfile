@@ -31,4 +31,4 @@ COPY --from=builder /repo/packages/api/.medusa/server ./
 
 EXPOSE 9000
 
-CMD ["sh", "-c", "bun run db:migrate && bun run start"]
+CMD ["bun", "run", "start"]
