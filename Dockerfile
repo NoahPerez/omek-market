@@ -30,5 +30,4 @@ RUN apt-get update \
 COPY --from=builder /repo/packages/api/.medusa/server ./
 
 EXPOSE 9000
-
 CMD ["bun", "run", "start"]
