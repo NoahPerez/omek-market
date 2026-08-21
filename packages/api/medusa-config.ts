@@ -36,6 +36,13 @@ const redisOptions = {
 module.exports = withMercur({
   projectConfig: {
    databaseUrl: process.env.DATABASE_URL,
+    databaseDriverOptions: {
+  connection: {
+    ssl: {
+      rejectUnauthorized: false,
+    },
+  },
+},
     redisUrl: REDIS_URL,
     workerMode,
     http: {
@@ -48,8 +55,7 @@ module.exports = withMercur({
     }
   },
   admin: {
-    disable: process.env.DISABLE_ADMIN === "true",
-    backendUrl: process.env.BACKEND_URL,
+    disable: disableAdmin,
   },
   featureFlags: {
     seller_registration: true
