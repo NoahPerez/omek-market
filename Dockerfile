@@ -69,6 +69,9 @@ ENV MEDUSA_WORKER_MODE=$MEDUSA_WORKER_MODE
 # Copy the compiled Medusa server
 COPY --from=builder /repo/packages/api/.medusa/server ./
 
+# Copy seed scripts into the production image
+COPY --from=builder /repo/packages/api/src/scripts ./src/scripts
+
 EXPOSE 9000
 
 # Run database migrations before starting Medusa
